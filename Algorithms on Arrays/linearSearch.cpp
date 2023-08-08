@@ -1,20 +1,29 @@
 #include<iostream>
 using namespace std;
-bool linearSearch(int arr[],int x,int num)
+void linearSearch(int arr[],int x,int key)
 {
-    bool isPresent=false;
+   int indexOfKey;
+   bool isPresent=false;
    for(int i=0;i<x;i++)
    {
-       if(arr[i]==num)
+       if(arr[i]==key)
        {
+        indexOfKey=i;
         isPresent=true;
        }
    }
-   return isPresent;
+   if(isPresent==true)
+   {
+    cout<<key<<" is present at index "<<indexOfKey;
+   }
+   else
+   {
+    cout<<key<<" is not there in a given array";
+   }
 }
 int main()
 {
-    int Asize,arr[10],num;
+    int Asize,arr[10],key;
     cout<<"Enter the size of array:";
     cin>>Asize;
     cout<<"Enter any "<<Asize<<" array:";
@@ -22,15 +31,7 @@ int main()
     {
         cin>>arr[i];
     }
-    cout<<"Enter the number you want to search:";
-    cin>>num;
-    bool check=linearSearch(arr,Asize,num);
-    if(check==true)
-   {
-    cout<<num<<" is present in a given array";
-   }
-   else
-   {
-   cout<<num<<" is not there in a given array";
-   }
+    cout<<"Enter a key:";
+    cin>>key;
+    linearSearch(arr,Asize,key);
 }
