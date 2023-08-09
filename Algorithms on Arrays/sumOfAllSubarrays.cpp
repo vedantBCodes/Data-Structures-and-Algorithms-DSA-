@@ -1,22 +1,21 @@
 #include <iostream>
 using namespace std;
 
-void SubarraysInAnArrays(int arr[], int Asize)
+void sumOfSubarrays(int arr[], int Asize)
 {
-    cout<<"The possible subarrays are \n";
+    int sum=0;
     for (int i = 0; i < Asize; i++)
     {
         for (int j = i; j < Asize; j++)
         {
-            cout<<"[ "<<arr[i]<<" ";
+            sum=sum+arr[i];
             for(int k=i+1;k<j+1;k++)
             {
-           cout<<arr[k]<<" ";
+            sum=sum+arr[k];
             }
-            cout<<"]";
-             cout<<endl;
         }
     }
+     cout<<"The sum of all subarrays is \n"<<sum;
 }
 
 int main()
@@ -29,7 +28,7 @@ int main()
     {
         cin>>arr[i];
     }
-    SubarraysInAnArrays(arr,Asize);
+    sumOfSubarrays(arr,Asize);
 
     return 0;
 }
