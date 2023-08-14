@@ -9,9 +9,12 @@ int* movingZerosToTheEnd(int arr[],int x)
      {
         for(int j=i;j<x;j++)
         {
-            arr[j]=arr[j+1];
+            if(arr[j]!=0)
+            {
+                swap(arr[i],arr[j]);
+                break;
+            }
         }
-        arr[x-1]=0;
      }
    }
    return arr;
@@ -19,7 +22,7 @@ int* movingZerosToTheEnd(int arr[],int x)
 
 int main()
 {
-    int arr[]={10,10,0,30,0,40,50},x=7;
+    int arr[]={10,0,20,0,40,0,50},x=7;
     int *arr2=movingZerosToTheEnd(arr,x);
     cout<<"The array elements after moving zeros to the end : ";
     for(int i=0;i<x;i++)
