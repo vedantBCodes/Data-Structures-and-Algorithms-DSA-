@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-      //Frequencies of array elements in a sorted array
+  //Frequencies of array elements in a sorted array
 void frequencies(int arr[],int x)
 {
     int i=0,j;
