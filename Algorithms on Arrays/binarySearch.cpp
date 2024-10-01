@@ -1,5 +1,9 @@
 #include<iostream>
 using namespace std;
+
+// Binary search can only be applied on monotonic functions
+// A monotonic function is one that is consistently either increasing or decreasing over its entire domain.
+
 void binarySearch(int arr[],int x,int key)
 {
    int indexOfKey;
