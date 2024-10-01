@@ -9,7 +9,7 @@ void binarySearch(int arr[],int x,int key)
    int indexOfKey;
    bool isPresent=false;
    int startPoint=0;
-   int endPoint=x; //Here x is the size of array
+   int endPoint=x-1; //Here x is the size of array
    while(startPoint<=endPoint)
    {
     int midPoint=(startPoint+endPoint)/2;
