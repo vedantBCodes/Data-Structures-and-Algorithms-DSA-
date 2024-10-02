@@ -18,6 +18,7 @@ using namespace std;
 
          // Method -->1 (Normal method)
 void firstAndLastOccurances(int arr[],int n,int key)
+
 {
    int cnt=0;
    int first,last;

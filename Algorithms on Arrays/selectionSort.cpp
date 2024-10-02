@@ -1,21 +1,20 @@
 #include<iostream>
 using namespace std;
  
-int* selectionSort(int arr[],int Asize)
+void selectionSort(int arr[],int Asize)
 {
-    for(int i=0;i<Asize;i++)
+    for(int i=0;i<Asize-1;i++)
     {
+        int midIndex=i;
         for(int j=i+1;j<Asize;j++)
         {
-            if(arr[i]>arr[j])
+            if(arr[j]<arr[midIndex])
             {
-                int temp=arr[i];
-                arr[i]=arr[j];
-                arr[j]=temp;
+               midIndex=j;
             }
         }
+        swap(arr[i],arr[midIndex]);  //swap is an in-built function
     }
-    return arr;
 }
 int main()
 {
@@ -27,11 +26,11 @@ int main()
     {
         cin>>arr[i];
     }
-    int* sortedArray=selectionSort(arr,Asize);
+    selectionSort(arr,Asize);
     cout<<"The sorted array:";
     for(int i=0;i<Asize;i++)
     {
-       cout<<sortedArray[i]<<" ";
+       cout<<arra[i]<<" ";
     }
    return 0;
 }
