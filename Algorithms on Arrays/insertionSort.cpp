@@ -1,7 +1,39 @@
 #include<iostream>
 using namespace std;
- 
-int* insertionSort(int arr[],int Asize)
+
+void printArray(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+
+// Method-1 (using nested for loop)
+
+void insertionSort1(int arr[],int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        int temp=arr[i];
+        int j;
+        for(j=i-1;j>=0;j--)
+        {
+            if(arr[j]>temp)
+            {
+                arr[j+1]=arr[j];
+            }
+            else
+            {
+                break;
+            }
+        }
+        arr[j+1]=temp;
+    }
+}
+// Method-2 (using for and while loop)
+
+void insertionSort2(int arr[],int Asize)
 {
     for(int i=1;i<Asize;i++)
     {
@@ -14,23 +46,16 @@ int* insertionSort(int arr[],int Asize)
             }
         arr[j+1]=current;
     }
-    return arr;
 }
+
 int main()
 {
-    int Asize,arr[10];
-    cout<<"Enter the size of array:";
-    cin>>Asize;
-    cout<<"Enter any "<<Asize<<" array:";
-    for(int i=0;i<Asize;i++)
-    {
-        cin>>arr[i];
-    }
-    int* sortedArray=insertionSort(arr,Asize);
-    cout<<"The sorted array:";
-    for(int i=0;i<Asize;i++)
-    {
-       cout<<sortedArray[i]<<" ";
-    }
+    int arr1[]={4,12,5,13,1},n=5;
+    int arr2[]={4,2,3,5,1},m=5;
+    insertionSort1(arr1,n);
+    printArray(arr1,n);
+    cout<<endl;
+    insertionSort2(arr2,m);
+    printArray(arr2,m);
    return 0;
 }
