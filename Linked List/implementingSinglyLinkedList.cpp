@@ -19,5 +19,11 @@ int main()
     cout<<node1->data<<endl;   //Displaying data members using array (->) operator .
     cout<<node1->next;
     
+    /*
+    NOTE : Here node1 is a 1st node which is a pointer which store the address of the 1st node
+           and if we print node1 like "cout<<node1 ;" then it will return the address of 1st node.
+           node1->data returns the value at that address.
+           and node1->next returns the address of the next node , in this case it will be NULL
+    */
     return 0;
 }
