@@ -1,43 +1,54 @@
 #include<iostream>
-#include<stack>
+#include<stack>    //No need to include stack header file here
 using namespace std;
 
-class Stack {
+class Stack 
+{
     //properties
     public:
-        int *arr;
-        int top;
-        int size;
+        int *arr;      //Defining an empty array
+        int top;       //Defining a variable top to show index of an array item
+        int size;      //Defining a variable size to show the size of array
 
     // behaviour
-    Stack(int size) {
+    Stack(int size) 
+    {            //Parameterized constuctor
         this -> size = size;
-        arr = new int[size];
-        top = -1;
+        arr = new int[size];     //Creating an array with size=size
+        top = -1;                //Initializing top variable with -1
     }
 
-    void push( int element) {
-        if(size - top > 1) {
-            top++;
+    void push(int element) 
+    {
+        if(size - top > 1)   //Condition to check if there is space to add a new item
+        {
+            top++;           ///For 1st element index will be 0
             arr[top] = element;
         }
-        else{
+        else           //if there is no space
+        {
             cout << "Stack OverFlow" << endl;
         }
     }
 
-    void pop() {
-        if(top >=0 ) {
+    void pop() 
+    {
+        if(top >=0 )    //Condition to check if there is element in array or not
+        {
             top--;
         }
-        else{
+        else           //if there is not element in array
+        {
             cout << "Stack UnderFlow" << endl;
         }
     }
 
-    int peek() {
+    int peek()          //Function that returns the topmost array element (i.e peek element)
+    {
         if(top >=0 )
+        {
             return arr[top];
+        }
         else
         {
             cout << "Stack is Empty" << endl;
@@ -45,11 +56,14 @@ class Stack {
         }
     }
 
-    bool isEmpty() {
-        if( top == -1) {
+    bool isEmpty() 
+    {
+        if( top == -1) 
+        {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
@@ -83,11 +97,13 @@ int main() {
 
     cout << st.peek() << endl;
 
-    if(st.isEmpty()) {
-        cout << "Stack is Empty mere dost " << endl;
+    if(st.isEmpty()) 
+    {
+        cout << "Stack is Empty" << endl;
     }
-    else{
-        cout << "Stack is not Empty mere dost " << endl;
+    else
+    {
+        cout << "Stack is not Empty  " << endl;
     }
 
     return 0;
